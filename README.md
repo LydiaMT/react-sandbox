@@ -112,3 +112,18 @@ Thank you so much [Dev Ed](https://github.com/developedbyed) for taking the time
   webpack-cli
   webpack-dev-server
 ```
+### Project Tree
+
+```
+.
+├── LICENSE
+├── README.md
+├── package-lock.json
+├── package.json
+├── src
+│   ├── App.css
+│   ├── App.jsx
+│   ├── index.html
+│   └── index.jsx
+└── webpack.config.js
+```
