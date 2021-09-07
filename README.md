@@ -1,16 +1,16 @@
-## React Sandbox
-## [Lydia Minehan-Tubic](https://github.com/LydiaMT)
+### React Sandbox
+### [Lydia Minehan-Tubic](https://github.com/LydiaMT)
 #
-## About
-### Website to practice common React use cases
+### About
+#### Website to practice common React use cases
 #
-## How to install React if you don't enjoy pain and misery
+### How to create a React App if you DO NOT enjoy pain and misery
 
 1. In terminal run: `npx create-react-app YOUR-APP-NAME`
 1. Clean up the installed items by deleting anything that is not needed for your application. 
 
 #
-## How to create a React App if you enjoy pain and misery
+### How to create a React App if you DO enjoy pain and misery
 
 1. `npm init -y` to initialize a packagelock.json
 1. `npm i react react-dom` to install react and react-dom dependencies
@@ -96,7 +96,7 @@
 
 Thank you so much [Dev Ed](https://github.com/developedbyed) for taking the time to create [this tutorial](https://www.youtube.com/watch?v=EUM78cxo0i8) on how to set up a React app manually. The steps I captured above are taken from your YouTube video. 
 
-## Manual Build: Dependencies & Packages 
+### Manual Build: Dependencies & Packages 
 ```
   @babel/core
   @babel/preset-env
