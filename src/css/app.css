@@ -1,7 +1,10 @@
 @import-normalize;
 @import 'recipe-list.css';
+@import 'recipe.css';
 @import 'font.css';
 @import 'buttons.css';
+@import 'ingredient-list.css';
+
 
 *, *::before, *::after {
   font-family: 'Varela Round', sans-serif;
@@ -14,4 +17,9 @@ html {
 body {
   padding: 0;
   margin: 0;
+}
+
+/* utility class */
+.mr-1 {
+  margin-right: 5px;
 }
