@@ -45,8 +45,18 @@ const sampleRecipes = [
   }
 ]
 
+// Allows you to pass down props with context
+// Removes the need to deeply nest which can be challenging to read
+export const RecipeContext = React.createContext()
+
 function App() {
   const [recipes, setRecipes] = useState(sampleRecipes);
+  
+  // Object with now key will automaitcally assign the value as the key
+  const recipeContextValue = {
+    handleRecipeAdd,
+    handleRecipeDelete 
+  }
   
   // handle represents a 'click' event here (can techinical name whatever you want)
   function handleRecipeAdd(){
@@ -68,11 +78,11 @@ function App() {
   }
 
   return (
-    <RecipeList 
-      recipes={recipes}
-      handleRecipeAdd={handleRecipeAdd}
-      handleRecipeDelete={handleRecipeDelete}
-    />
+    <RecipeContext.Provider value={recipeContextValue}>
+      <RecipeList 
+        recipes={recipes}
+      />
+    </RecipeContext.Provider>
   )
 }
 
