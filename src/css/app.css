@@ -4,10 +4,12 @@
 @import 'font.css';
 @import 'buttons.css';
 @import 'ingredient-list.css';
+@import 'recipe-edit.css';
 
 
 *, *::before, *::after {
   font-family: 'Varela Round', sans-serif;
+  box-sizing: border-box;
 } 
 
 html {
