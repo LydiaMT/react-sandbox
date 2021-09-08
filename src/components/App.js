@@ -52,7 +52,10 @@ export const RecipeContext = React.createContext()
 const LOCAL_STORAGE_KEY = 'cookingWithReact.recipes'
 
 function App() {
+  const [selectedRecipeId, setselectedRecipeId] = useState();
   const [recipes, setRecipes] = useState(sampleRecipes);
+  const selectedRecipe = recipes.find(recipe => recipe.id === selectedRecipeId)
+  console.log('selectedRecipe', selectedRecipe)
   
   // Load from Local storage
   useEffect(() => {
@@ -69,9 +72,14 @@ function App() {
   // Object with now key will automaitcally assign the value as the key
   const recipeContextValue = {
     handleRecipeAdd,
-    handleRecipeDelete 
+    handleRecipeDelete ,
+    handleRecipeSelect
   }
   
+  function handleRecipeSelect(id) {
+    setselectedRecipeId(id);
+  }
+
   // handle represents a 'click' event here (can techinical name whatever you want)
   function handleRecipeAdd(){
     const newRecipe = {
@@ -96,7 +104,7 @@ function App() {
       <RecipeList 
         recipes={recipes}
       />
-      <RecipeEdit />
+      {selectedRecipe && <RecipeEdit recipe={selectedRecipe}/>}
     </RecipeContext.Provider>
   )
 }
