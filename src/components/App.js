@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import RecipeList from './RecipeList'
 import '../css/app.css';
 import { v4 as uuidv4 } from 'uuid';
@@ -48,10 +48,23 @@ const sampleRecipes = [
 // Allows you to pass down props with context
 // Removes the need to deeply nest which can be challenging to read
 export const RecipeContext = React.createContext()
+const LOCAL_STORAGE_KEY = 'cookingWithReact.recipes'
 
 function App() {
   const [recipes, setRecipes] = useState(sampleRecipes);
   
+  // Load from Local storage
+  useEffect(() => {
+    const recipeJSON = localStorage.getItem(LOCAL_STORAGE_KEY)
+    if(recipeJSON) setRecipes(JSON.parse(recipeJSON))
+  }, []) // only load when application starts
+
+  // add to local storage
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(recipes))
+  }, [recipes]) // load when recipes is updated
+
+
   // Object with now key will automaitcally assign the value as the key
   const recipeContextValue = {
     handleRecipeAdd,
