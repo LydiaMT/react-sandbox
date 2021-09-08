@@ -3,6 +3,7 @@
 #
 ### About
 #### Website to practice common React use cases
+#### [Deployed on Netlify](https://trusting-mayer-20d607.netlify.app/)
 #
 ### How to create a React App if you DO NOT enjoy pain and misery
 
