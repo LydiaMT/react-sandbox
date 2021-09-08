@@ -5,7 +5,7 @@ export default function RecipeIngredientEdit() {
     <>
       <input type="text" className="recipe-edit__input"/>
       <input type="text" className="recipe-edit__input"/>
-      <button className="btn btn--danger">&times;</button>
+      <button className="btn btn--danger recipe-edit__btn">&times;</button>
     </>
   )
 }

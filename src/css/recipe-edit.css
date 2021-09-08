@@ -60,6 +60,10 @@ textarea.recipe-edit__input {
   text-align: center;
 }
 
+.recipe-edit__btn{
+  width: 90%;
+}
+
 @media (max-width: 1000px) {
   .recipe-edit__details-grid,
   .recipe-edit__ingredient-grid{
