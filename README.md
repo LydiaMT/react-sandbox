@@ -6,7 +6,7 @@
 #
 ### How to create a React App if you DO NOT enjoy pain and misery
 
-1. In terminal run: `npx create-react-app YOUR-APP-NAME`
+1. In terminal run: `npx create-react-app YOUR-APP-NAME` | `npx create-react-app .` to build the app in the folder you are currently in.
 1. Clean up the installed items by deleting anything that is not needed for your application. 
 
 #
