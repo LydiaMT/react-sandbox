@@ -60,7 +60,7 @@ function App() {
   // Load from Local storage
   useEffect(() => {
     const recipeJSON = localStorage.getItem(LOCAL_STORAGE_KEY)
-    if(recipeJSON) setRecipes(JSON.parse(recipeJSON))
+    if(recipeJSON != null) setRecipes(JSON.parse(recipeJSON))
   }, []) // only load when application starts
 
   // add to local storage
@@ -92,18 +92,22 @@ function App() {
   function handleRecipeAdd(){
     const newRecipe = {
       id: uuidv4(),
-      name: 'New',
+      name: '',
       servings: 1,
-      cookTime: '1:00',
-      instructions: 'Instr.',
+      cookTime: '',
+      instructions: '',
       ingredients: [
-        { id: uuidv4(), name: 'Name', amount: '1 Tbs' }
+        { id: uuidv4(), name: '', amount: '' }
       ]
     }
+    setselectedRecipeId(newRecipe.id)
     setRecipes([...recipes, newRecipe]);
   }
 
   function handleRecipeDelete(id) {
+    if(setselectedRecipeId != null && setselectedRecipeId === id ){
+      setselectedRecipeId(undefined);
+    }
     setRecipes(recipes.filter(recipe => recipe.id !== id))
   }
 
